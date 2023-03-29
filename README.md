@@ -48,15 +48,18 @@ Set up steps to follow before you can start the API.
 You can run the API using any of the following scripts:
 
 ```bash
-# pnpm
 pnpm start
-pnpm start:dev # restarts the server when files change
 
-# yarn
-yarn start
-yarn start:dev # restarts the server when files change
+# restarts the server when files change
+pnpm start:dev
+```
 
-# npm
-npm run start
-npm run start:dev # restarts the server when files change
+## Running tests
+
+```bash
+# runs the unit tests
+pnpm test
+
+# runs the end-to-end tests
+pnpm test:e2e
 ```
