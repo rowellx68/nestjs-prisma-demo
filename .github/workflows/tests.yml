@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@v3
 
       - uses: pnpm/action-setup@v2
+        with:
+          version: latest
 
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -50,6 +52,8 @@ jobs:
         uses: actions/checkout@v3
 
       - uses: pnpm/action-setup@v2
+        with:
+          version: latest
 
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -69,7 +73,13 @@ jobs:
         run: pnpm install
 
       - name: Run migration
+        id: run-migration
         run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: "file:./dev.db"
 
       - name: Run unit tests
         run: pnpm test:e2e
+        if: steps.run-migration.outputs.exit_code == 0
+        env:
+          DATABASE_URL: "file:./dev.db"
