@@ -38,6 +38,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - run: npx prisma generate
+        env:
+          DATABASE_URL: "file:./dev.db"
+
       - name: Run unit tests
         run: npm run test
 
@@ -75,6 +79,10 @@ jobs:
       - name: Run migration
         id: run-migration
         run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: "file:./dev.db"
+
+      - run: npx prisma generate
         env:
           DATABASE_URL: "file:./dev.db"
 
