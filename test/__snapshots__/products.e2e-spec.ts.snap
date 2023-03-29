@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsController (e2e) (GET) /products returns expected result with products 1`] = `
+[
+  {
+    "description": "Lorem ipsum",
+    "id": "5eb3f6a4-2dd0-46dd-aa8c-8a0c730d2c68",
+    "image": "some-file.png",
+    "name": "Raspberry & White Chocolate Blondies",
+    "price": "25",
+  },
+]
+`;
+
+exports[`ProductsController (e2e) (GET) /products/:productId returns product details 1`] = `
+{
+  "description": "Lorem ipsum",
+  "id": "5eb3f6a4-2dd0-46dd-aa8c-8a0c730d2c68",
+  "image": "some-file.png",
+  "name": "Raspberry & White Chocolate Blondies",
+  "price": "25",
+}
+`;

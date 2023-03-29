@@ -1,0 +1,11 @@
+node_modules
+dist
+
+prisma/*.db
+prisma/*.db.journal
+
+*.log
+
+# ignore .env files for other environments
+.env
+.env.*
