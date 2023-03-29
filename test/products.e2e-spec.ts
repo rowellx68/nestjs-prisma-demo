@@ -103,4 +103,20 @@ describe('ProductsController (e2e)', () => {
       expect(body).toMatchSnapshot();
     });
   });
+
+  describe('(POST) /products', () => {
+    it.todo('returns bad request if body is invalid');
+
+    it.todo('returns expected result when product is added');
+  });
+
+  describe('(PUT) /products/:productId', () => {
+    it.todo('returns bad request if productId is invalid');
+
+    it.todo('returns bad request if body is invalid');
+
+    it.todo('returns notfound if product does not exist');
+
+    it.todo('returns expected result when product is updated');
+  });
 });
